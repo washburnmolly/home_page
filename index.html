@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molly Washburn, EdM | Academic Administration & Leadership</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --columbia-blue: #C4D8E2;
+            --columbia-blue-dark: #9BBECF;
+            --columbia-blue-light: #EBF2F6;
+            --deep-navy: #1B365D;
+            --slate-blue: #2C4D75;
+            --text-main: #2D3748;
+            --text-muted: #4A5568;
+            --bg-body: #F8FAFC;
+            --bg-card: #FFFFFF;
+            --border-color: #E2E8F0;
+            --shadow-sm: 0 1px 3px rgba(27, 54, 93, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(27, 54, 93, 0.08), 0 2px 4px -1px rgba(27, 54, 93, 0.04);
+            --transition: all 0.25s ease-in-out;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+
+        /* Fixed Streamlined Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: 'Lora', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--deep-navy);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.75rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.925rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--deep-navy);
+        }
+
+        /* Container & Layout */
+        .container {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 4rem 1.5rem;
+        }
+
+        section {
+            scroll-margin-top: 100px;
+            margin-bottom: 3.5rem;
+        }
+
+        /* Hero / Introduction Card */
+        .hero-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-top: 5px solid var(--columbia-blue-dark);
+            border-radius: 12px;
+            padding: 3rem 2.5rem;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 3.5rem;
+        }
+
+        .hero-title {
+            font-family: 'Lora', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--deep-navy);
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--slate-blue);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 1.5rem;
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        .contact-item {
+            display: inline-flex;
+            align-items: center;
+            color: var(--text-muted);
+        }
+
+        .contact-item a {
+            color: var(--slate-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .contact-item a:hover {
+            color: var(--deep-navy);
+            text-decoration: underline;
+        }
+
+        .summary-text {
+            font-size: 1.05rem;
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        /* Section Titles */
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.75rem;
+            gap: 1rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Lora', serif;
+            font-size: 1.65rem;
+            color: var(--deep-navy);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .section-header .line {
+            height: 2px;
+            background-color: var(--columbia-blue);
+            width: 100%;
+            border-radius: 2px;
+        }
+
+        /* Experience Section */
+        .experience-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 1.75rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .experience-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--columbia-blue-dark);
+        }
+
+        .institution-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 0.75rem;
+        }
+
+        .institution-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--deep-navy);
+        }
+
+        .institution-location {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .role-block {
+            margin-top: 1rem;
+        }
+
+        .role-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 0.5rem;
+        }
+
+        .role-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--slate-blue);
+        }
+
+        .role-dates {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            background-color: var(--columbia-blue-light);
+            padding: 0.15rem 0.6rem;
+            border-radius: 4px;
+        }
+
+        .bullet-list {
+            list-style: none;
+            margin-top: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .bullet-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--columbia-blue-dark);
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        /* Grid Layouts for Tiles */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Tile Styles */
+        .tile {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.75rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Education Tiles */
+        .degree-item {
+            margin-bottom: 1rem;
+        }
+
+        .degree-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .degree-title {
+            font-weight: 600;
+            color: var(--deep-navy);
+            font-size: 1.05rem;
+        }
+
+        .degree-school {
+            color: var(--text-muted);
+            font-size: 0.925rem;
+        }
+
+        /* Competencies & Tools Pills */
+        .tag-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+        }
+
+        .tag {
+            background-color: var(--columbia-blue-light);
+            color: var(--deep-navy);
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            border: 1px solid rgba(155, 190, 207, 0.4);
+        }
+
+        .category-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--slate-blue);
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-title:first-child {
+            margin-top: 0;
+        }
+
+        /* Committees & Service List */
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.925rem;
+        }
+
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+
+        .service-name {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .service-year {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            margin-left: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            background-color: #FFFFFF;
+        }
+
+        /* Responsive Navigation Adjustments */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 0.8rem 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                margin-top: 0.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .institution-header, .role-title-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+            }
+
+            .role-dates {
+                margin-top: 0.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Streamlined Navigation Header -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="nav-brand">Molly Washburn, EdM</a>
+            <ul class="nav-links">
+                <li><a href="#about">Summary</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Competencies & Tools</a></li>
+                <li><a href="#service">Service & Awards</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Hero / Summary Section -->
+        <section id="about">
+            <div class="hero-card">
+                <h1 class="hero-title">Molly Washburn, EdM</h1>
+                <div class="hero-subtitle">Senior Academic Administrator</div>
+                
+                <div class="contact-bar">
+                    <span class="contact-item">New York, NY</span>
+                    <span class="contact-item">•</span>
+                    <span class="contact-item"><a href="mailto:washburn.molly@gmail.com">washburn.molly@gmail.com</a></span>
+                    <span class="contact-item">•</span>
+                    <span class="contact-item">503-367-9043</span>
+                    <span class="contact-item">•</span>
+                    <span class="contact-item"><a href="https://linkedin.com/in/molly-washburn" target="_blank" rel="noopener">linkedin.com/in/molly-washburn</a></span>
+                </div>
+
+                <p class="summary-text">
+                    Senior academic administrator with 10+ years of experience leading administrative, financial, and operational functions within higher education. Proven ability to manage complex academic units, oversee budgeting and staff, and partner with leadership to drive strategic initiatives. Experienced in faculty administration, cross-functional collaboration, and optimizing processes in both academic and clinical environments.
+                </p>
+            </div>
+        </section>
+
+        <!-- Professional Experience Section -->
+        <section id="experience">
+            <div class="section-header">
+                <h2>Professional Experience</h2>
+                <div class="line"></div>
+            </div>
+
+            <!-- Columbia University Business School -->
+            <div class="experience-card">
+                <div class="institution-header">
+                    <span class="institution-name">Columbia University Business School</span>
+                    <span class="institution-location">New York, NY | February 2022 – Present</span>
+                </div>
+
+                <!-- Role 1 -->
+                <div class="role-block">
+                    <div class="role-title-row">
+                        <span class="role-title">Director of Academic Administration, Marketing Division</span>
+                        <span class="role-dates">August 2022 – Present</span>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Direct administrative, financial, and academic operations for the Marketing Division, supporting 25 full-time and 25 adjunct faculty, 21 PhD students, and supervising 5 full-time staff across MBA, EMBA, MS, and PhD programs.</li>
+                        <li>Lead development and execution of short- and long-term operational strategies in partnership with divisional leadership, aligning resources with academic and institutional priorities.</li>
+                        <li>Oversee divisional budgeting, financial forecasting, and long-term resource planning; monitor expenditures and optimize financial performance.</li>
+                        <li>Direct administrative execution of academic programs and faculty initiatives, ensuring effective delivery and alignment with curricular and divisional goals.</li>
+                        <li>Manage faculty lifecycle processes, including recruitment, appointments, and tenure coordination, ensuring compliance with university policies.</li>
+                        <li>Serve as the primary liaison across faculty, divisional leadership, and central administrative units (HR, Finance, Dean’s Office), resolving complex operational issues and driving cross-functional coordination.</li>
+                        <li>Oversee planning and execution of divisional events and programming, supporting outreach, visibility, and faculty engagement initiatives.</li>
+                    </ul>
+                </div>
+
+                <!-- Role 2 -->
+                <div class="role-block" style="margin-top: 1.5rem;">
+                    <div class="role-title-row">
+                        <span class="role-title">Associate Director, Marketing Division</span>
+                        <span class="role-dates">February 2022 – July 2022</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NYU College of Dentistry -->
+            <div class="experience-card">
+                <div class="institution-header">
+                    <span class="institution-name">New York University College of Dentistry</span>
+                    <span class="institution-location">New York, NY | August 2015 – January 2022</span>
+                </div>
+
+                <!-- Role 1 -->
+                <div class="role-block">
+                    <div class="role-title-row">
+                        <span class="role-title">Assistant Director, Communications & Public Affairs</span>
+                        <span class="role-dates">December 2018 – January 2022</span>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Led strategic communications initiatives to support institutional priorities and enhance visibility across digital and print platforms.</li>
+                        <li>Partnered with academic and administrative departments to develop and execute marketing and communications strategies.</li>
+                        <li>Managed digital channels, publications, and content development to ensure consistent branding and messaging.</li>
+                        <li>Oversaw operational aspects of communications projects, including budgeting, vendor management, and production timelines.</li>
+                    </ul>
+                </div>
+
+                <!-- Role 2 -->
+                <div class="role-block" style="margin-top: 1.5rem;">
+                    <div class="role-title-row">
+                        <span class="role-title">Department Administrator, Department of Periodontology</span>
+                        <span class="role-dates">August 2015 – November 2018</span>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Directed administrative operations for the Department of Periodontology, aligning departmental activities with institutional and academic priorities.</li>
+                        <li>Managed departmental budgeting, financial tracking, and reporting; served as primary liaison with central administrative and finance offices.</li>
+                        <li>Coordinated faculty recruitment processes, faculty and student scheduling, and accreditation-related activities, ensuring continuity of operations during leadership transitions.</li>
+                        <li>Supported both academic and clinical functions within the department, coordinating across faculty, students, and clinical staff to ensure efficient operations.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Boston University Goldman School of Dental Medicine -->
+            <div class="experience-card">
+                <div class="institution-header">
+                    <span class="institution-name">Boston University Goldman School of Dental Medicine</span>
+                    <span class="institution-location">Boston, MA | September 2011 – July 2015</span>
+                </div>
+
+                <div class="role-block">
+                    <div class="role-title-row">
+                        <span class="role-title">Communications Manager; Administrative Coordinator; Senior Administrative Secretary</span>
+                        <span class="role-dates">September 2011 – July 2015</span>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Progressively advanced through roles of increasing responsibility in academic and clinical administration.</li>
+                        <li>Supported departmental operations, communications, and faculty activities across multiple units.</li>
+                        <li>Coordinated administrative processes, events, and communications initiatives to support institutional goals.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grid for Education & Service -->
+        <div class="grid-2">
+            
+            <!-- Education Section -->
+            <section id="education">
+                <div class="section-header">
+                    <h2>Education</h2>
+                    <div class="line"></div>
+                </div>
+                <div class="tile">
+                    <div class="degree-item">
+                        <div class="degree-title">Master of Education (EdM)</div>
+                        <div class="degree-school">Higher Education Administration</div>
+                        <div class="degree-school" style="font-weight: 500; color: var(--slate-blue); margin-top: 0.2rem;">Boston University — Boston, MA</div>
+                    </div>
+                    <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 1.25rem 0;">
+                    <div class="degree-item">
+                        <div class="degree-title">Bachelor of Arts (BA)</div>
+                        <div class="degree-school">Interdisciplinary Studies</div>
+                        <div class="degree-school" style="font-weight: 500; color: var(--slate-blue); margin-top: 0.2rem;">George Fox University — Newberg, OR</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Committees, Service & Awards Section -->
+            <section id="service">
+                <div class="section-header">
+                    <h2>Committees, Service & Awards</h2>
+                    <div class="line"></div>
+                </div>
+                <div class="tile">
+                    <ul class="service-list">
+                        <li>
+                            <span class="service-name">Quality Assurance Committee, Columbia University Business School</span>
+                            <span class="service-year">2023–2025</span>
+                        </li>
+                        <li>
+                            <span class="service-name">Humanitarianism Council, NYU College of Dentistry</span>
+                            <span class="service-year">2019–2022</span>
+                        </li>
+                        <li>
+                            <span class="service-name">Faculty/Staff Development Commission, NYU College of Dentistry</span>
+                            <span class="service-year">2016–2018</span>
+                        </li>
+                        <li>
+                            <span class="service-name">Kristen Donovan Award for Excellence in Service, Boston University</span>
+                            <span class="service-year">2014</span>
+                        </li>
+                        <li>
+                            <span class="service-name">Dean’s Council on Ethics and Professionalism, Boston University</span>
+                            <span class="service-year">2013–2015</span>
+                        </li>
+                        <li>
+                            <span class="service-name">Goal Champion, Applied Strategic Planning Committee, Boston University</span>
+                            <span class="service-year">2013–2015</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Competencies & Systems/Tools Section -->
+        <section id="skills">
+            <div class="section-header">
+                <h2>Core Competencies & Technical Systems</h2>
+                <div class="line"></div>
+            </div>
+            
+            <div class="grid-2">
+                <div class="tile">
+                    <div class="category-title">Core Competencies</div>
+                    <div class="tag-group">
+                        <span class="tag">Strategic & Financial Management</span>
+                        <span class="tag">Academic & Administrative Operations</span>
+                        <span class="tag">Human Resources & Faculty Administration</span>
+                        <span class="tag">Project & Program Management</span>
+                        <span class="tag">Data Analysis & Reporting</span>
+                    </div>
+                </div>
+
+                <div class="tile">
+                    <div class="category-title">Financial & HR Systems</div>
+                    <div class="tag-group">
+                        <span class="tag">PeopleSoft</span>
+                        <span class="tag">Concur</span>
+                        <span class="tag">Interfolio</span>
+                    </div>
+
+                    <div class="category-title">Project Management</div>
+                    <div class="tag-group">
+                        <span class="tag">Asana</span>
+                        <span class="tag">Smartsheet</span>
+                        <span class="tag">Hive</span>
+                    </div>
+
+                    <div class="category-title">Data, Collaboration & CMS/LMS</div>
+                    <div class="tag-group">
+                        <span class="tag">Excel</span>
+                        <span class="tag">Google Sheets</span>
+                        <span class="tag">Qualtrics</span>
+                        <span class="tag">Teams</span>
+                        <span class="tag">Slack</span>
+                        <span class="tag">Canvas</span>
+                        <span class="tag">Blackboard</span>
+                        <span class="tag">WordPress</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Molly Washburn. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
